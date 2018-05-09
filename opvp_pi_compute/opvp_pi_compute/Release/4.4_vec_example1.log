@@ -1,0 +1,3 @@
+﻿icl: : message #10346: optimization reporting will be enabled at link time when performing interprocedural optimizations
+  vec_example1.cpp
+  4.4_vec_example1.vcxproj -> C:\Users\Sergey\Documents\Open MP\example\Release\4.4_vec_example1.exe

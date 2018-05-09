@@ -1,0 +1,149 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINING OPTION VALUES:
+  -Qinline-factor: 100
+  -Qinline-min-size: 20
+  -Qinline-max-size: 276
+  -Qinline-max-total-size: 2000
+  -Qinline-max-per-routine: disabled
+  -Qinline-max-per-compile: disabled
+
+
+Begin optimization report for: main()
+
+    Report from: Interprocedural optimizations [ipo]
+
+C:\Users\Sergey\Documents\Open MP\opvp_pi_compute\opvp_pi_compute\main.cpp(4,12):INLINE REPORT START:(main()) [1]
+C:\Users\Sergey\Documents\Open MP\opvp_pi_compute\opvp_pi_compute\main.cpp(22,2):(1)-> printf(const char *, ...)
+INLINE REPORT END
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at C:\Users\Sergey\Documents\Open MP\opvp_pi_compute\opvp_pi_compute\main.cpp(15,7)
+C:\Users\Sergey\Documents\Open MP\opvp_pi_compute\opvp_pi_compute\main.cpp(15,7):remark #15301: OpenMP SIMD LOOP WAS VECTORIZED
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+C:\Users\Sergey\Documents\Open MP\opvp_pi_compute\opvp_pi_compute\main.cpp(4,12):remark #34051: REGISTER ALLOCATION : [_main] C:\Users\Sergey\Documents\Open MP\opvp_pi_compute\opvp_pi_compute\main.cpp:4
+
+    Hardware registers
+        Reserved     :    1[ esp]
+        Available    :   23[ eax edx ecx ebx ebp esi edi mm0-mm7 zmm0-zmm7]
+        Callee-save  :    4[ ebx ebp esi edi]
+        Assigned     :   10[ eax esi zmm0-zmm7]
+        
+    Routine temporaries
+        Total         :      54
+            Global    :      12
+            Local     :      42
+        Regenerable   :       7
+        Spilled       :       2
+        
+    Routine stack
+        Variables     :      12 bytes*
+            Reads     :       2 [0.00e+000 ~ 0.0%]
+            Writes    :       3 [0.00e+000 ~ 0.0%]
+        Spills        :      40 bytes*
+            Reads     :       4 [1.20e+001 ~ 4.8%]
+            Writes    :       4 [1.00e+001 ~ 4.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: printf(const char *, ...)
+
+    Report from: Code generation optimizations [cg]
+
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(950,1):remark #34051: REGISTER ALLOCATION : [_printf] C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h:950
+
+    Hardware registers
+        Reserved     :    1[ esp]
+        Available    :   23[ eax edx ecx ebx ebp esi edi mm0-mm7 zmm0-zmm7]
+        Callee-save  :    4[ ebx ebp esi edi]
+        Assigned     :    5[ eax edx ecx esi zmm0]
+        
+    Routine temporaries
+        Total         :      11
+            Global    :       7
+            Local     :       4
+        Regenerable   :       1
+        Spilled       :       1
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+000 ~ 0.0%]
+            Writes    :       0 [0.00e+000 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+000 ~ 0.0%]
+            Writes    :       0 [0.00e+000 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: __local_stdio_printf_options()
+
+    Report from: Code generation optimizations [cg]
+
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\corecrt_stdio_config.h(73,1):remark #34051: REGISTER ALLOCATION : [___local_stdio_printf_options] C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\corecrt_stdio_config.h:73
+
+    Hardware registers
+        Reserved     :    1[ esp]
+        Available    :   23[ eax edx ecx ebx ebp esi edi mm0-mm7 zmm0-zmm7]
+        Callee-save  :    4[ ebx ebp esi edi]
+        Assigned     :    1[ eax]
+        
+    Routine temporaries
+        Total         :       6
+            Global    :       0
+            Local     :       6
+        Regenerable   :       2
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+000 ~ 0.0%]
+            Writes    :       0 [0.00e+000 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+000 ~ 0.0%]
+            Writes    :       0 [0.00e+000 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+    Report from: Profile guided optimizations [pgo]
+
+
+
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\corecrt_stdio_config.h(73,1):remark #24003: __local_stdio_printf_options(): profile feedback used a static estimate profile
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(950,1):remark #24003: printf(const char *, ...): profile feedback used a static estimate profile
+C:\Users\Sergey\Documents\Open MP\opvp_pi_compute\opvp_pi_compute\main.cpp(4,12):remark #24003: main(): profile feedback used a static estimate profile
+
+  0 out of 3 routine(s) used training profile data for PGO feedback
+  0 out of 3 routine(s) were unable to use training profile data for PGO feedback
+  0 out of 3 routine(s) were unable to find training profile data for PGO feedback
+  3 out of 3 routine(s) used a static estimate profile for PGO feedback
+
+
+

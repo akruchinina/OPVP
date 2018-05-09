@@ -1,0 +1,2 @@
+﻿icl: : message #10346: optimization reporting will be enabled at link time when performing interprocedural optimizations
+  main.cpp
